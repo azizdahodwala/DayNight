@@ -9,11 +9,26 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    @IBOutlet weak var lightSwitchLbl: UILabel!
+    
+    var lightAreOn = false
+    
+    @IBAction func lightSwitchBtnClicked(_ sender: Any) {
+        
+        if lightAreOn == false {
+            lightSwitchLbl.text = "Lights On"
+            lightSwitchLbl.textColor = UIColor.black
+            view.backgroundColor = UIColor.white
+            lightAreOn = true
+        } else
+        {
+            lightSwitchLbl.text = "Lights Off"
+            lightSwitchLbl.textColor = UIColor.white
+            view.backgroundColor = UIColor.black
+            lightAreOn = false
+        }
     }
-
+    
 
 }
 
